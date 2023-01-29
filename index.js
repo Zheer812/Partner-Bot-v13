@@ -7,11 +7,10 @@ const { token , partner, link, idvc }  = require('./config.json');
 client.on('ready',async () => {  await console.log(client.user.tag);})
 client.on('ready', async () => {
  
- client.user.setActivity(`Free reklam Send Your Link Server`, { type:'WATCHING' })
+ client.user.setActivity(`Free reklam Send Your Link Server`, { type:'PLAYING' })
 });
 
-//DSCODES//https://discord.gg/qtkPbKeDSVDSCODES//
-////////
+
 
 client.on("messageCreate", (message) => {
     if (message.content === "Reklam") {
@@ -85,11 +84,11 @@ client.on('messageCreate',async (message) => {
 
     if(!share) return;
     if (cool > Date.now()) {
-        return await message.author.send({content : 'Sorry You Can Send Your Ad Again After 30m '}).catch(async (err) => {
+        return await message.author.send({content : 'Sorry You Can Send Your Ad Again After 5h '}).catch(async (err) => {
             await message.channel.send({content : `${message.author} Sorry You Can Send Your Ad Again After 1 hour `})
         }).catch(err => undefined);
     }
-    let time = await Date.now() + ms('60m');
+    let time = await Date.now() + ms('5h');
     try {
     await client.fetchInvite(args[0]).then(async (invite) => {
         await db.set(`cool_${message.author.id}`,time);
