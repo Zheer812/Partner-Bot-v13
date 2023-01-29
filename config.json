@@ -1,0 +1,6 @@
+{
+         "token": "", /// Token Is Here
+	 "partner": "", /// Id Channel To send Link
+	 "link": "https://discord.gg/", /// Link Server
+         "idvc": "" /// Id Channel To join bot in Voice
+}
